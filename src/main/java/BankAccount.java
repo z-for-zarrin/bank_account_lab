@@ -23,6 +23,10 @@ public class BankAccount {
         this.balance += depositAmount;
     }
 
+    public void withdraw(double withdrawalAmount) {
+        this.balance -= withdrawalAmount;
+    }
+
 
 //    GETTERS AND SETTERS
     public String getFirstName() {

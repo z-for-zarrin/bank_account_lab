@@ -130,6 +130,17 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    public void canWithdrawFromAccount() {
+        // ARRANGE
+        double expected = -10;
+        // ACT
+        account.withdraw(10);
+        double actual = account.getBalance();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
 
 
 }
