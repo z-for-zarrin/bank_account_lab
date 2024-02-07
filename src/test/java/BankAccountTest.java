@@ -141,6 +141,18 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    public void canPayInterest() {
+        // ARRANGE
+        double expected = 101;
+        account.setBalance(100);
+        // ACT
+        account.payInterest(1);
+        double actual = account.getBalance();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
 
 
 }

@@ -27,6 +27,11 @@ public class BankAccount {
         this.balance -= withdrawalAmount;
     }
 
+    public void payInterest(double interestRate) {
+        // interestRate is percentage
+        this.balance *= (1 + interestRate/100);
+    }
+
 
 //    GETTERS AND SETTERS
     public String getFirstName() {
