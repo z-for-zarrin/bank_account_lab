@@ -20,8 +20,8 @@ public class BankAccount {
         this.accountType = accountType;
         this.balance = 0;
 
-        this.overdraft = 0;
-        if(accountType.equals("Current")) {
+        this.overdraft = 0;                     // overdraft automatically set to 0, unless
+        if(accountType.equals("Current")) {     // using a current account
             this.overdraft = 1000;
         }
     }
@@ -32,7 +32,12 @@ public class BankAccount {
     }
 
     public void withdraw(double withdrawalAmount) {
-        this.balance -= withdrawalAmount;
+        if(this.balance - withdrawalAmount >= this.overdraft * -1) {
+            this.balance -= withdrawalAmount;
+        }
+        else {
+            System.out.println("Insufficient funds");
+        }
     }
 
     public void payInterest() {

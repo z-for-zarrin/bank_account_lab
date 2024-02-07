@@ -153,7 +153,7 @@ public class BankAccountTest {
         // ASSERT
         assertThat(actual).isEqualTo(expected);
     }
-    
+
     @Test
      public void canSetOverdraft() {
         // ARRANGE
@@ -196,6 +196,18 @@ public class BankAccountTest {
         account.setBalance(100);
         // ACT
         account.payInterest();
+        double actual = account.getBalance();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canBlockWithdrawalIfBelowOverdraft() {
+        // ARRANGE
+        double expected = 100;
+        account.setBalance(100);
+        // ACT
+        account.withdraw(2000);
         double actual = account.getBalance();
         // ASSERT
         assertThat(actual).isEqualTo(expected);
