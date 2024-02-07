@@ -8,13 +8,15 @@ public class BankAccount {
     private LocalDate dateOfBirth;
     private int accountNumber;
     private double balance;
+    private String accountType;
 
 //    CONSTRUCTOR FUNCTION
-    public BankAccount(String firstName, String lastName, LocalDate dateOfBirth, int accountNumber) {
+    public BankAccount(String firstName, String lastName, LocalDate dateOfBirth, int accountNumber, String accountType) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.accountNumber = accountNumber;
+        this.accountType = accountType;
         this.balance = 0;
     }
 
