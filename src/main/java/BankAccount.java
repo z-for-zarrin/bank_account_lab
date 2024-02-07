@@ -29,9 +29,19 @@ public class BankAccount {
         this.balance -= withdrawalAmount;
     }
 
-    public void payInterest(double interestRate) {
-        // interestRate is percentage
-        this.balance *= (1 + interestRate/100);
+    public void payInterest() {
+        double interestRate = 0;
+        if(this.accountType.equals("Current")) {
+            interestRate = 0.02;
+        }
+        else if(this.accountType.equals("Savings")) {
+            interestRate = 0.06;
+        }
+        else {
+            System.out.println("Invalid account type");
+        }
+
+        this.balance *= (1 + interestRate);
     }
 
 
