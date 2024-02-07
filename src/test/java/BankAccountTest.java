@@ -202,7 +202,7 @@ public class BankAccountTest {
     }
 
     @Test
-    public void canBlockWithdrawalIfBelowOverdraft() {
+    public void canBlockWithdrawalIfGoesBelowOverdraft() {
         // ARRANGE
         double expected = 100;
         account.setBalance(100);
