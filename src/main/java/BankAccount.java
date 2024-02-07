@@ -76,6 +76,11 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    public String getAccountType() {
+        return accountType;
+    }
 
-
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
 }

@@ -11,7 +11,7 @@ public class BankAccountTest {
     @BeforeEach
     public void setUp() {
         LocalDate dateOfBirth = LocalDate.of(1985, 1, 9);
-        account = new BankAccount("John", "Doe", dateOfBirth, 12345);
+        account = new BankAccount("John", "Doe", dateOfBirth, 12345, "Standard");
     }
 
     @Test
@@ -115,6 +115,27 @@ public class BankAccountTest {
         // ACT
         account.setBalance(99.99);
         double actual = account.getBalance();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canGetAccountType() {
+        // ARRANGE
+        String expected = "Standard";
+        // ACT
+        String actual = account.getAccountType();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canSetAccountType() {
+        // ARRANGE
+        String expected = "Gold";
+        // ACT
+        account.setAccountType("Gold");
+        String actual = account.getAccountType();
         // ASSERT
         assertThat(actual).isEqualTo(expected);
     }
