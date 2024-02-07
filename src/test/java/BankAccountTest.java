@@ -10,7 +10,7 @@ public class BankAccountTest {
 
     @BeforeEach
     public void setUp() {
-        LocalDate dateOfBirth = new LocalDate.of(1985, 1, 9);
+        LocalDate dateOfBirth = LocalDate.of(1985, 1, 9);
         account = new BankAccount("John", "Doe", dateOfBirth, 12345);
     }
 
