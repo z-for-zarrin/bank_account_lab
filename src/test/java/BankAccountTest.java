@@ -22,6 +22,5 @@ public class BankAccountTest {
         String actual = account.getFirstName();
         // ASSERT
         assertThat(actual).isEqualTo(expected);
-
     }
 }
