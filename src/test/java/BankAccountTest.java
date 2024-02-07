@@ -6,6 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class BankAccountTest {
 
+//    SET UP
+
     private BankAccount account;
 
     @BeforeEach
@@ -13,6 +15,8 @@ public class BankAccountTest {
         LocalDate dateOfBirth = LocalDate.of(1985, 1, 9);
         account = new BankAccount("John", "Doe", dateOfBirth, 12345, "Current");
     }
+
+//    GETTER AND SETTER TESTS
 
     @Test
     public void canGetFirstName() {
@@ -141,6 +145,29 @@ public class BankAccountTest {
     }
 
     @Test
+    public void canGetOverdraft() {
+        // ARRANGE
+        double expected = 1000;
+        // ACT
+        double actual = account.getOverdraft();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+    
+    @Test
+     public void canSetOverdraft() {
+        // ARRANGE
+        double expected = 2000;
+        // ACT
+        account.setOverdraft(2000);
+        double actual = account.getOverdraft();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
+//    OTHER TESTS
+
+    @Test
     public void canDepositIntoAccount() {
         // ARRANGE
         double expected = 99.99;
@@ -173,7 +200,5 @@ public class BankAccountTest {
         // ASSERT
         assertThat(actual).isEqualTo(expected);
     }
-
-
 
 }
