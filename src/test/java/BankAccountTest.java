@@ -119,4 +119,17 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    public void canDepositIntoAccount() {
+        // ARRANGE
+        double expected = 99.99;
+        // ACT
+        account.deposit(99.99);
+        double actual = account.getBalance();
+        // ASSERT
+        assertThat(actual).isEqualTo(expected);
+    }
+
+
+
 }

@@ -18,6 +18,12 @@ public class BankAccount {
         this.balance = 0;
     }
 
+//    CUSTOM METHODS
+    public void deposit(double depositAmount) {
+        this.balance += depositAmount;
+    }
+
+
 //    GETTERS AND SETTERS
     public String getFirstName() {
         return this.firstName;
