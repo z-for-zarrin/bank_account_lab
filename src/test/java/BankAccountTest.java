@@ -126,7 +126,7 @@ public class BankAccountTest {
     @Test
     public void canGetAccountType() {
         // ARRANGE
-        String expected = "Standard";
+        String expected = "Current";
         // ACT
         String actual = account.getAccountType();
         // ASSERT
